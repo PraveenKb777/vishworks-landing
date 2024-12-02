@@ -49,10 +49,14 @@ const Slider = () => {
       ref={targetRef}
       className="h-[500vh]  sticky top-0 bottom-0 left-0 right-0 flex justify-center overflow-x-clip   bg-primary-b px-[20px] xl:pl-10 xl:pr-10"
     >
-      <div className="flex p-0 xl:w-[1120px]  xl:max-w-[1120px] w-screen  sticky top-0 bottom-0 left-0 right-0   h-screen  items-center pt-20  xl:pt-28 ">
+      <div className="flex flex-col p-0 xl:w-[1120px]  xl:max-w-[1120px] w-screen  sticky top-0 bottom-0 left-0 right-0   h-screen  items-center pt-6  xl:pt-10 ">
         <h1 className=" text-[12px] xl:text-heading-xxsmall  inline-block text-[#4d4c4d] self-start">
           HOW IT WORKS
         </h1>
+        <p className="text-[20px] font-extrabold xl:text-heading-medium text-primary-a mt-4 xl:max-w-[80%] self-start">
+          From ideation to launch, we ensure every step delivers value and
+          innovation.
+        </p>
         {SLIDER_CONTENT.map((e, i) => (
           <Card
             key={i}

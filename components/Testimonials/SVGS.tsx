@@ -110,3 +110,33 @@ export const ClickMe: FC<SVGProps<SVGSVGElement>> = (props) => (
     />
   </svg>
 );
+
+export const QuotesSVG: FC<SVGProps<SVGSVGElement>> = (props) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={800}
+    height={800}
+    viewBox="0 0 64 64"
+    xmlSpace="preserve"
+    style={{
+      fillRule: "evenodd",
+      clipRule: "evenodd",
+      strokeLinejoin: "round",
+      strokeMiterlimit: 2,
+    }}
+    {...props}
+  >
+    <path
+      style={{
+        fill: "none",
+      }}
+      d="M-640 0H640v800H-640z"
+    />
+    <path
+      d="M27.194 12v8.025q-3.806.21-5.761 1.39t-2.749 3.829q-.793 2.649-.793 7.579h9.303v19.145H8.113V33.767q0-11.277 4.836-16.522T27.194 12M56 12v8.025q-3.805.21-5.761 1.338-1.956 1.127-2.828 3.829-.872 2.7-.872 7.631H56v19.145H36.814V33.767q0-11.277 4.809-16.522T56 12"
+      style={{
+        fillRule: "nonzero",
+      }}
+    />
+  </svg>
+);

@@ -67,6 +67,7 @@ function Services() {
     >
       <div className="ml-[20px] xl:ml-0 xl:w-[1120px] self-auto  xl:self-center  xl:max-w-[1120px] mb-4">
         <Heading text="WHAT DO WE OFFER?" />
+
         <h2 className="text-[20px] font-extrabold xl:text-heading-medium text-primary-a mt-4 xl:max-w-[80%]">
           We elevate brands by transforming ideas into stylish, effective, and
           <GardiantText> seamless experiences.</GardiantText>

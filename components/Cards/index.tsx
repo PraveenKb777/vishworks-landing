@@ -67,7 +67,7 @@ const Card: FC<CardProps> = ({ index, scrollYProgress, length, item }) => {
     }
 
     return () => unsub();
-  }, [WIDTH, index, left, length]);
+  }, [WIDTH, index, left, length, CARD_GAP]);
 
   return (
     <motion.div
@@ -79,14 +79,14 @@ const Card: FC<CardProps> = ({ index, scrollYProgress, length, item }) => {
       variants={{
         hidden: { top: `${70 + index * 10}%`, opacity: 0 },
         visible: {
-          top: "50%",
+          top: "55%",
           opacity: 1,
           y: "-40%",
         },
       }}
       style={{
         left,
-        top: "50%",
+        top: "55%",
         opacity: 1,
         y: "-40%",
       }}

@@ -122,9 +122,9 @@ const Form = () => {
             </button>
             <form
               onSubmit={handleSubmit}
-              className="bg-primary-b  max-h-[95vh]  relative rounded-tl-md rounded-tr-md p-10"
+              className="bg-primary-b  max-h-[98vh]  relative rounded-tl-md rounded-tr-md p-5 xl:p-10"
             >
-              <h2 className="text-heading-medium dark:text-primary-a">
+              <h2 className="text-[32px] font-bold xl:text-heading-medium dark:text-primary-a">
                 Let’s level up your <br />
                 brand, together
               </h2>
@@ -137,7 +137,7 @@ const Form = () => {
 
               <label
                 htmlFor="form-name"
-                className="text-heading-xxsmall text-primary-a inline-block mt-5"
+                className="text-[16px] xl:text-heading-xxsmall text-primary-a inline-block mt-5"
               >
                 NAME
               </label>
@@ -155,17 +155,17 @@ const Form = () => {
               />
               <label
                 htmlFor="form-phone"
-                className="text-heading-xxsmall text-primary-a inline-block mt-5"
+                className="text-[16px] xl:text-heading-xxsmall text-primary-a inline-block mt-5"
               >
                 PHONE NUMBER
               </label>
               <br />
               <div className="flex ">
-                <p className="outline-none text-heading-xxsmall text-primary-a border px-3 py-5 w-[20%] mr-1 rounded-md bg-primary-b">
+                <p className="outline-none text-[16px] xl:text-heading-xxsmall text-primary-a border px-3 py-5 w-[20%] mr-1 rounded-md bg-primary-b">
                   +91
                 </p>
                 <input
-                  className="outline-none text-heading-xxsmall border px-3 py-5 w-full rounded-md bg-primary-b text-primary-a"
+                  className="outline-none text-[16px] xl:text-heading-xxsmall border px-3 py-5 w-full rounded-md bg-primary-b text-primary-a"
                   required
                   placeholder="Enter your phone number"
                   id="form-phone"
@@ -184,7 +184,7 @@ const Form = () => {
                 required
                 value={serviceNeeded}
                 onChange={(e) => setServiceNeeded(e.target.value)}
-                className="outline-none text-heading-xxsmall mt-5 border px-3 py-5 w-full rounded-md bg-primary-b text-primary-a"
+                className="outline-none text-[16px] xl:text-heading-xxsmall mt-5 border px-3 py-5 w-full rounded-md bg-primary-b text-primary-a"
               >
                 <option value="">SERVICE NEEDED</option>
                 <option value="web-dev">Web Development </option>
@@ -194,13 +194,13 @@ const Form = () => {
               </select>
               <label
                 htmlFor="form-desc"
-                className="text-heading-xxsmall text-primary-a inline-block mt-5"
+                className="text-[16px] xl:text-heading-xxsmall text-primary-a inline-block mt-5"
               >
                 HOW CAN WE HELP?
               </label>
               <br />
               <textarea
-                className="outline-none text-heading-xxsmall border px-3 py-5 w-full rounded-md resize-none bg-primary-b text-primary-a"
+                className="outline-none text-[16px] xl:text-heading-xxsmall border px-3 py-5 w-full rounded-md resize-none bg-primary-b text-primary-a"
                 placeholder="Tell us little about your project"
                 id="form-desc"
                 name="form-desc"

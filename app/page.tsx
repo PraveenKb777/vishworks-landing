@@ -36,7 +36,7 @@ export default function Home() {
             <HeroSection />
             <Concept />
             <Services />
-            <div className="h-[600vh]  xl:h-[600vh] relative ">
+            <div className="min-h-[600vh]  xl:h-[600vh] relative ">
               <Slider />
               <Testimonials />
             </div>
