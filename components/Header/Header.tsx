@@ -51,7 +51,7 @@ const Header: FC = () => {
         animate={{ y: showHeader ? 0 : "-120%" }}
         transition={{ type: "tween", duration: 0.5 }}
         className="absolute top-3 py-3   flex items-center justify-between
-   bg-[#ffffff30] bg-clip-padding border-2 backdrop-filter backdrop-blur-sm bg-opacity-10 w-[calc(100%-40px)]  xl:mx-0 xl:w-[80dvw] max-w-[1120px] rounded-full"
+   bg-[#ffffff30] dark:border-[#80808080] bg-clip-padding border-2 backdrop-filter backdrop-blur-sm bg-opacity-10 w-[calc(100%-40px)]  xl:mx-0 xl:w-[80dvw] max-w-[1120px] rounded-full"
       >
         <div
           className="rounded-full text-heading-xxsmall  ml-3 hover:cursor-pointer "

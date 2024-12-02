@@ -1,5 +1,5 @@
 const Content = {
-  email: "vishworks@gmail.com",
+  email: "mail@vishworks.com",
 };
 
 export default Content;

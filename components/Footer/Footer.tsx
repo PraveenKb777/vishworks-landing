@@ -51,7 +51,7 @@ const Footer = () => {
               vishworks.ap@gmail.com
             </a>
           </div>
-          <div>
+          {/* <div>
             <h6 className="text-core-content-teritary  text-[18px] font-extrabold xl:text-heading-xsmall">
               Follow Us
             </h6>
@@ -62,10 +62,10 @@ const Footer = () => {
             >
               vishworks.ap@gmail.com
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
-      <div className="w-[calc(100%-40px)]  xl:w-[80%] border-t border-primary-b text-primary-b px-2 py-4 xl:px-10 flex justify-between items-center">
+      <div className="w-[calc(100%-40px)] max-w-[1120px]  xl:w-[80%] border-t border-primary-b text-primary-b px-2 py-4 xl:px-10 flex justify-between items-center">
         <p className="text-[8px] xl:text-label-small">
           &#169; Copyright 2024 VishWorks Private Limited. all Rights Reserved.
         </p>

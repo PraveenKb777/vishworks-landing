@@ -14,21 +14,22 @@ interface ITestimonials {
 
 const TESTIMONIALS: ITestimonials[] = [
   {
-    name: "Jade",
-    desc: "I couldn’t be happier with my experience working with Vishworks! They took my vision and brought it to life with a beautifully designed, user-friendly website that truly reflects my brand. The team was professional, attentive, and really understood what my business needed.",
-    img: "/testimonials/test1.png",
+    name: "Leelavathi",
+    job: "-",
+    desc: "Collaborating with VW on the development of my m-diabetic app has been an incredible experience. They brought the app to life with a user-friendly and visually appealing interface, perfectly complementing the app's purpose of educating and empowering users. Their approachable nature, timely delivery, and commitment to excellence made the development process smooth and memorable. VW played a pivotal role in transforming my vision into a comprehensive diabetes management tool. I highly recommend their expertise and dedication.",
+    img: "/testimonials/test1.svg",
   },
   {
-    name: "Jade",
-    job: "Head - Customer experience and sales / EarlySalary",
-    desc: "I couldn’t be happier with my experience working with Vishworks! They took my vision and brought it to life I couldn’t be happier with my experience working with Vishworks! They took my vision and brought it to life  with a beautifully designed, user-friendly website that truly reflects my brand. The team was professional, attentive, and really understood what my business needed.",
-    img: "/testimonials/test2.png",
+    name: "Denis,Rich",
+    job: "Freelancer",
+    desc: "I entrusted Vish Works with the design and development of my portfolio, and I couldn't be happier with the results. They did an incredible job, delivering a design that is both visually stunning and highly functional. The attention to detail and professionalism they demonstrated throughout the process was exceptional. I'm extremely satisfied with the final product and would highly recommend Vish Works to anyone looking for top-quality web design and development services.",
+    img: "/testimonials/test2.svg",
   },
   {
-    name: "Jade",
-    job: "Head - Customer experience and sales / EarlySalary",
-    desc: "The team was professional, attentive, and really understood what my business needed.",
-    img: "/testimonials/test3.png",
+    name: "Ashish Lath,",
+    job: "Founder and CEO Savesage",
+    desc: "Amandeep showcased a strong sense of ownership and collaboration, effectively working with cross-functional teams, including design, technology, and marketing, to ensure project success. Their ability to manage multiple tasks and meet deadlines was commendable, and they consistently brought fresh ideas to enhance user experience and engagement. Amandeep was a valuable contributor to our team. I am confident they will bring the same dedication and creativity to all their endeavours, driving impactful outcomes.",
+    img: "/testimonials/test3.jpeg",
   },
 ];
 
@@ -44,20 +45,20 @@ const TestimonialCard: FC<{
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: -50 }}
       transition={{ duration: 0.5 }}
-      className="w-full min-w-[100%] h-[400px]  text-[13px] md:h-auto md:min-w-[33%] md:w-[33%] md:max-w-[33%] md:mr-3 border border-[#b3b2b3] flex flex-col justify-between rounded-md p-6 md:max-h-[500px] relative"
+      className="w-full min-w-[100%]  h-[400px]  text-[13px] md:h-auto md:min-w-[33%] md:w-[33%] md:max-w-[33%] md:mr-3 border border-[#b3b2b3] flex flex-col justify-between rounded-md p-6 md:max-h-[500px] relative"
     >
-      <div className="w-full flex justify-between  items-center">
+      <div className="w-full flex  items-center">
         <div className="h-[90px] w-[90px] aspect-square relative rounded-full bg-red-50 overflow-hidden">
           <Image src={img} alt="testimonial dp" fill />
         </div>
-        <div className="flex flex-col max-w-[60%]">
+        <div className="flex ml-5 flex-col max-w-[60%]">
           <h3 className="text-[16px] font-bold md:text-label-large text-primary-a mb-2">
             {name}
           </h3>
           {job && <p className="text-heading-xxxsmall text-[#808080]">{job}</p>}
         </div>
       </div>
-      <p className="text-primary-a mt-10 md:text-[12px] xl:text-paragraph-xsmall">
+      <p className="text-primary-a mt-10 md:text-[12px] overflow-scroll no-scrollbar xl:text-paragraph-xxsmall">
         {desc}
       </p>
       <QuotesSVG
