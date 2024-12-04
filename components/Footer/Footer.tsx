@@ -3,6 +3,8 @@ import React from "react";
 import Button from "../Button/Button";
 import { useLenis } from "lenis/react";
 import { motion } from "motion/react";
+
+import constant from "../../constants";
 const Footer = () => {
   const lenis = useLenis();
   return (
@@ -46,9 +48,9 @@ const Footer = () => {
             </h6>
             <a
               className="text-[12px] font-semibold xl:text-links-large text-primary-b"
-              href="mailto:vishworks.ap@gmail.com"
+              href={`mailto:${constant.email}`}
             >
-              vishworks.ap@gmail.com
+              {constant.email}
             </a>
           </div>
           {/* <div>

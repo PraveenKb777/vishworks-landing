@@ -14,22 +14,23 @@ interface ITestimonials {
 
 const TESTIMONIALS: ITestimonials[] = [
   {
-    name: "Leelavathi",
-    job: "-",
-    desc: "Collaborating with VW on the development of my m-diabetic app has been an incredible experience. They brought the app to life with a user-friendly and visually appealing interface, perfectly complementing the app's purpose of educating and empowering users. Their approachable nature, timely delivery, and commitment to excellence made the development process smooth and memorable. VW played a pivotal role in transforming my vision into a comprehensive diabetes management tool. I highly recommend their expertise and dedication.",
-    img: "/testimonials/test1.svg",
-  },
-  {
-    name: "Denis,Rich",
-    job: "Freelancer",
-    desc: "I entrusted Vish Works with the design and development of my portfolio, and I couldn't be happier with the results. They did an incredible job, delivering a design that is both visually stunning and highly functional. The attention to detail and professionalism they demonstrated throughout the process was exceptional. I'm extremely satisfied with the final product and would highly recommend Vish Works to anyone looking for top-quality web design and development services.",
-    img: "/testimonials/test2.svg",
-  },
-  {
     name: "Ashish Lath,",
     job: "Founder and CEO Savesage",
     desc: "Amandeep showcased a strong sense of ownership and collaboration, effectively working with cross-functional teams, including design, technology, and marketing, to ensure project success. Their ability to manage multiple tasks and meet deadlines was commendable, and they consistently brought fresh ideas to enhance user experience and engagement. Amandeep was a valuable contributor to our team. I am confident they will bring the same dedication and creativity to all their endeavours, driving impactful outcomes.",
     img: "/testimonials/test3.jpeg",
+  },
+
+  {
+    name: "Denis,Rich",
+    job: "Freelancer",
+    desc: "I entrusted Vish Works with the design and development of my portfolio, and I couldn't be happier with the results. They did an incredible job, delivering a design that is both visually stunning and highly functional. The attention to detail and professionalism they demonstrated throughout the process was exceptional. I'm extremely satisfied with the final product and would highly recommend Vish Works to anyone looking for top-quality web design and development services.",
+    img: "/testimonials/test2.png",
+  },
+  {
+    name: "Leelavathi",
+    job: "-",
+    desc: "Collaborating with VW on the development of my m-diabetic app has been an incredible experience. They brought the app to life with a user-friendly and visually appealing interface, perfectly complementing the app's purpose of educating and empowering users. Their approachable nature, timely delivery, and commitment to excellence made the development process smooth and memorable. VW played a pivotal role in transforming my vision into a comprehensive diabetes management tool. I highly recommend their expertise and dedication.",
+    img: "/testimonials/test1.png",
   },
 ];
 
