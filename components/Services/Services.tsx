@@ -76,7 +76,7 @@ function Services() {
       <div className="xl:flex-grow bg-gradient-1 py-5  flex flex-col justify-center overflow-hidden">
         <motion.div
           style={{
-            x: transform,
+            x: isMobile ? transform : 0,
           }}
           className="flex items-center justify-center"
         >
@@ -84,8 +84,8 @@ function Services() {
             <ServicesCard item={e} key={e.id} />
           ))}
         </motion.div>
-        <div className="flex mt-6 flex-col xl:flex-row xl:w-[1120px] max-w-[1120px] ml-[20px] xl:ml-0 xl:self-center justify-between">
-          <div className="bg-primary-b self-start px-2 xl:p-2 xl:px-4 order-2 mt-[20px] xl:mt-0 xl:order-1 rounded-full border-4 dark:border-primary-b transition-all">
+        <div className="flex mt-6 flex-col  xl:w-[1120px] max-w-[1120px] ml-[20px] xl:ml-0 xl:self-center justify-between">
+          <div className="md:hidden  bg-primary-b self-start px-2 xl:p-2 xl:px-4 order-2 mt-[20px] xl:mt-0 xl:order-1 rounded-full border-4 dark:border-primary-b transition-all">
             <input
               className="outline-none border-none mt-2 accent-black dark:accent-white transition-all"
               type="range"
@@ -96,14 +96,14 @@ function Services() {
               step={0.01}
             />
           </div>
-          <div className="mt-[20px] xl:mt-0 order-1">
+          <div className="md:self-end  mt-[20px] xl:mt-0 order-1">
             <Button
-              label="Contact Us"
-              className="bg-primary-b  dark:border-black dark:hover:bg-primary-a dark:hover:text-primary-b mr-4"
+              label="Know More"
+              className="bg-primary-b  dark:border-black dark:hover:bg-primary-a dark:hover:text-primary-b "
               onClick={() => setIsOpen && setIsOpen(true)}
             />
 
-            <Button label="Download Broacher" variant="black" />
+            {/* <Button label="Download" variant="black" /> */}
           </div>
         </div>
       </div>

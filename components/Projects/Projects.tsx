@@ -36,11 +36,11 @@ const Projects = () => {
         <motion.div
           className="absolute  xl:w-[1120px] w-screen xl:ml-0 ml-[20px] z-10"
           style={{
-            top: bottom,
-            opacity: opacityReachUs,
+            top: "5%",
+            opacity: 1,
           }}
         >
-          <Heading text="PROJECTS" />
+          <Heading text="OUR PROJECTS" />
         </motion.div>
         <motion.div
           className="absolute xl:w-[1120px] w-screen xl:ml-0 ml-[20px] z-10"
