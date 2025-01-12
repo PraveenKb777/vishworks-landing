@@ -68,6 +68,7 @@ const Card: FC<CardProps> = ({ index, scrollYProgress, length, item }) => {
 
     return () => unsub();
   }, [WIDTH, index, left, length, CARD_GAP]);
+  console.log(item.img);
 
   return (
     <motion.div
@@ -89,28 +90,33 @@ const Card: FC<CardProps> = ({ index, scrollYProgress, length, item }) => {
         top: "55%",
         opacity: 1,
         y: "-40%",
+        transformStyle: "preserve-3d",
       }}
     >
       <motion.div
-        className="text-primary-a border-2 rounded-md bg-primary-b flex flex-col justify-between p-5 xl:p-9 transition-all"
+        className="text-primary-b  rounded-2xl bg-primary-b relative flex flex-col justify-end p-2 xl:p-3 transition-all"
         style={{
           width: WIDTH,
-          aspectRatio: WIDTH === 420 ? 1 : WIDTH === 300 ? "1/1" : "1/2",
+          aspectRatio: WIDTH === 420 ? "1" : WIDTH === 300 ? "1/1" : "1/2",
           zIndex: index,
           minWidth: WIDTH,
           scale,
+          transformStyle: "preserve-3d",
+          backgroundImage: `url(${item.img})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
+        <div className="bg-primary-a text-heading-xsmall absolute h-10 w-10 flex justify-center items-center rounded-full top-3 right-3  aspect-square">
+          <h5>{index + 1}</h5>
+        </div>
         <div className="flex justify-between items-center">
           <h4 className="text-[18px] font-extrabold  xl:text-heading-xsmall">
             {item.head}
           </h4>
-          <div className="bg-gray-300 text-heading-xsmall h-10 w-10 flex justify-center items-center rounded-full  aspect-square">
-            <h5>{index + 1}</h5>
-          </div>
         </div>
         <div>
-          <span className="w-[190px] bg-primary-a h-0.5 inline-block rounded-full mb-2" />
+          <span className="w-[190px] bg-primary-b h-0.5 inline-block rounded-full mb-2" />
           <p className="text-[16px] xl:text-paragraph-medium">{item.desc}</p>
         </div>
       </motion.div>

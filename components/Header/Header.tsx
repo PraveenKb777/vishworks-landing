@@ -4,8 +4,9 @@ import { useLenis } from "lenis/react";
 import { motion } from "motion/react";
 import { FC, useContext, useEffect, useRef, useState } from "react";
 import { IoMenu } from "react-icons/io5";
-import { MdDarkMode, MdSunny } from "react-icons/md";
 import { Logo } from "../Logo/Logo";
+import { MdCall } from "react-icons/md";
+import { FormContext } from "@/context/FormContext";
 
 const HeaderTabs: FC<{ label: string; href?: string }> = ({ label, href }) => {
   const lenis = useLenis();
@@ -22,7 +23,9 @@ const HeaderTabs: FC<{ label: string; href?: string }> = ({ label, href }) => {
 };
 const Header: FC = () => {
   const [showHeader, setShowHeader] = useState(true);
-  const { setIsOpen, darkMode, onClickDarkToggle } = useContext(MenuContext);
+  const { setIsOpen } = useContext(MenuContext);
+  const { setIsOpen: setFormIsOpen } = useContext(FormContext);
+  const [showToolTip, setShowToolTip] = useState(false);
   const lenis = useLenis();
   const scrollPosition = useRef(0);
   useEffect(() => {
@@ -67,18 +70,26 @@ const Header: FC = () => {
           <HeaderTabs href="#contact" label="Contact" />
         </nav>
         <div
-          className="hidden md:block rounded-full  p-3 mr-3 hover:cursor-pointer bg-primary-a"
-          onClick={onClickDarkToggle}
+          className="hidden md:block rounded-full  relative p-3 mr-3 hover:cursor-pointer bg-primary-a"
+          // onClick={onClickDarkToggle}
+          onMouseEnter={() => setShowToolTip(true)}
+          onMouseLeave={() => setShowToolTip(false)}
+          onClick={() => setFormIsOpen && setFormIsOpen(true)}
         >
-          {darkMode ? (
-            <MdSunny color="black" size={20} />
-          ) : (
-            <MdDarkMode color="white" size={20} />
+          <MdCall size={25} color="white" />
+          {showToolTip && (
+            <motion.div
+              initial={{ opacity: 0, top: "100%" }}
+              animate={{ opacity: 1, top: "110%" }}
+              className="absolute px-5 py-2   rounded-md left-[50%] pointer-events-none translate-x-[-50%] bg-gray-700 text-white"
+            >
+              <p className="text-paragraph-xxsmall min-w-max">Contact Us</p>
+            </motion.div>
           )}
         </div>
         <div
           onClick={() => setIsOpen && setIsOpen(true)}
-          className="md:hidden rounded-full  p-3 mr-3 hover:cursor-pointer bg-[#00000008]"
+          className="md:hidden rounded-full   p-3 mr-3 hover:cursor-pointer bg-[#00000008]"
         >
           <IoMenu size={20} />
         </div>

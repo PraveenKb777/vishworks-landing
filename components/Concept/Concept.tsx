@@ -19,7 +19,7 @@ const Concept = () => {
           style={{ color: "#4D4C4D" }}
           className={className + " top-[20%] "}
         >
-          Concept.
+          Research.
         </motion.h1>
         <motion.h1
           whileInView={"visible"}
@@ -34,7 +34,7 @@ const Concept = () => {
             className + "left-[50%] translate-x-[-50%] -translate-y-[50%]"
           }
         >
-          Creation.
+          Build.
         </motion.h1>
         <motion.h1
           transition={{ duration: 0.4 }}
@@ -48,7 +48,7 @@ const Concept = () => {
           style={{ color: "#4D4C4D" }}
           className={className + "right-[-10vw] bottom-[20%] "}
         >
-          Growth.
+          Grow.
         </motion.h1>
       </div>
     </section>

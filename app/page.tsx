@@ -5,7 +5,6 @@ import Form from "@/components/Form/Form";
 import Header from "@/components/Header/Header";
 import HeroSection from "@/components/HeroSection/HeroSection";
 import MenuPopUp from "@/components/MenuPopUp/MenuPopUp";
-import Projects from "@/components/Projects/Projects";
 import Services from "@/components/Services/Services";
 import Slider from "@/components/Slider/Slider";
 import Testimonials from "@/components/Testimonials/Testimonials";
@@ -19,6 +18,7 @@ export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const { darkMode, onClickDarkToggle } = useDarkMode();
+
   return (
     <>
       <ReactLenis root>
@@ -40,7 +40,7 @@ export default function Home() {
               <Slider />
               <Testimonials />
             </div>
-            <Projects />
+            {/* <Projects /> */}
             <Footer />
             <Form />
             <MenuPopUp />

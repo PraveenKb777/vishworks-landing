@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { IconType } from "react-icons";
 
 const variants = {
   white:
@@ -16,11 +17,11 @@ interface ButtonProps
   > {
   label: string;
   load?: boolean;
-
+  Logo?: IconType;
   variant?: keyof typeof variants;
 }
 
-const Button: FC<ButtonProps> = ({ variant, label, load, ...props }) => {
+const Button: FC<ButtonProps> = ({ variant, label, load, Logo, ...props }) => {
   let className =
     "border rounded-md py-3 px-3 text-[14px] font-extrabold lg:text-label-medium transition-all duration-300  [&>*]:hover:text-primary-a ";
 
@@ -60,7 +61,10 @@ const Button: FC<ButtonProps> = ({ variant, label, load, ...props }) => {
           ></path>
         </svg>
       ) : (
-        label
+        <>
+          <span>{label}</span>
+          {Logo && <Logo className="ml-2 inline" />}
+        </>
       )}
     </button>
   );

@@ -103,9 +103,9 @@ const Testimonials = () => {
     >
       <div className=" max-w-full w-full md:w-auto px-[20px] xl:px-0 flex flex-col justify-center bg-primary-b xl:max-w-[1120px]">
         <div className="max-w-[1120px] self-center w-full mb-20">
-          <Heading text="TESTIMONIALS" />
+          <Heading text="WHAT OUR CLIENTS SAY." />
           <p className="text-[20px] font-extrabold xl:text-heading-medium text-primary-a mt-4 xl:max-w-[80%] ">
-            Let’s see what our valuable clients say about our work.
+            Real feedback from businesses we’ve helped succeed.
           </p>
         </div>
         <div className="flex justify-center items-stretch w-[95%] self-center md:w-full xl:max-w-[1200px]">

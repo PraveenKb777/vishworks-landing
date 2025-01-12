@@ -4,6 +4,7 @@ export interface IServiceItems {
   id: string;
   head: string;
   desc: string;
+  img?: string;
 }
 
 const ServicesCard: FC<{ item: IServiceItems }> = ({ item }) => {
