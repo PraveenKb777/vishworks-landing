@@ -10,15 +10,22 @@ interface CardProps {
   scrollYProgress: MotionValue<number>;
   length: number;
   item: ISliderItems;
+  inView: boolean;
 }
 
-const Card: FC<CardProps> = ({ index, scrollYProgress, length, item }) => {
+const Card: FC<CardProps> = ({
+  index,
+  scrollYProgress,
+  length,
+  item,
+  inView,
+}) => {
   const [WIDTH, setWIDTH] = useState(420);
   const [CARD_GAP, setCARD_GAP] = useState(30);
   useLayoutEffect(() => {
     function updateSize() {
       if (window.innerWidth < 768) {
-        console.log("called");
+        //console.log("called");
         setWIDTH(260);
         setCARD_GAP(10);
       } else if (window.innerWidth < 1024) {
@@ -49,7 +56,7 @@ const Card: FC<CardProps> = ({ index, scrollYProgress, length, item }) => {
   const scale = useTransform(scrollYProgress, range, [1, targetScale]);
 
   useEffect(() => {
-    console.log("called Widdth", WIDTH);
+    //console.log("called Widdth", WIDTH);
     let unsub: VoidFunction = () => {};
     if (WIDTH === 420 || WIDTH === 300) {
       if (index === length - 1) {
@@ -58,7 +65,7 @@ const Card: FC<CardProps> = ({ index, scrollYProgress, length, item }) => {
             parseInt(removeLastTwoCharacters(e)) <
             WIDTH + CARD_GAP * length
           ) {
-            console.log("try", WIDTH);
+            //console.log("try", WIDTH);
             left.stop();
             left.set(`${WIDTH + CARD_GAP * length}px`);
           }
@@ -68,13 +75,13 @@ const Card: FC<CardProps> = ({ index, scrollYProgress, length, item }) => {
 
     return () => unsub();
   }, [WIDTH, index, left, length, CARD_GAP]);
-  console.log(item.img);
+  //console.log(item.img);
 
   return (
     <motion.div
       className="text-black  absolute "
-      initial={index < 4 && "hidden"}
-      whileInView={index < 4 ? "visible" : undefined}
+      initial={"hidden"}
+      animate={inView ? "visible" : undefined}
       viewport={{ once: true, amount: "some" }}
       transition={{ duration: 0.5 }}
       variants={{
@@ -90,23 +97,32 @@ const Card: FC<CardProps> = ({ index, scrollYProgress, length, item }) => {
         top: "55%",
         opacity: 1,
         y: "-40%",
-        transformStyle: "preserve-3d",
       }}
     >
       <motion.div
-        className="text-primary-b  rounded-2xl bg-primary-b relative flex flex-col justify-end p-2 xl:p-3 transition-all"
+        className="text-primary-b  rounded-2xl bg-gray-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 sticky flex flex-col justify-end p-2 xl:p-3 transition-all"
         style={{
           width: WIDTH,
           aspectRatio: WIDTH === 420 ? "1" : WIDTH === 300 ? "1/1" : "1/2",
           zIndex: index,
           minWidth: WIDTH,
           scale,
-          transformStyle: "preserve-3d",
           backgroundImage: `url(${item.img})`,
-          backgroundSize: "cover",
           backgroundPosition: "center",
         }}
+        initial={{ backgroundSize: "100%" }}
+        whileHover={{
+          backgroundSize: "110%",
+          transition: { ease: "linear", duration: 0.1 },
+        }}
       >
+        <div
+          className="absolute top-0 left-0 h-full w-full rounded-2xl z-[-1]"
+          style={{
+            backgroundImage:
+              "linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(105,118,121,0) 94%)",
+          }}
+        />
         <div className="bg-primary-a text-heading-xsmall absolute h-10 w-10 flex justify-center items-center rounded-full top-3 right-3  aspect-square">
           <h5>{index + 1}</h5>
         </div>
@@ -117,7 +133,9 @@ const Card: FC<CardProps> = ({ index, scrollYProgress, length, item }) => {
         </div>
         <div>
           <span className="w-[190px] bg-primary-b h-0.5 inline-block rounded-full mb-2" />
-          <p className="text-[16px] xl:text-paragraph-medium">{item.desc}</p>
+          <p className="text-[16px] text-[#ccc] xl:text-paragraph-medium">
+            {item.desc}
+          </p>
         </div>
       </motion.div>
     </motion.div>

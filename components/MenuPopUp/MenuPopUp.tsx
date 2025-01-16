@@ -1,12 +1,10 @@
 import { MenuContext } from "@/context/MenuContext";
 import { useLenis } from "lenis/react";
 import { AnimatePresence, motion } from "motion/react";
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
-import DarkModeSwitch from "../DarkModeSwitch/DarkModeSwitch";
 const MenuPopUp = () => {
-  const { isOpen, setIsOpen, darkMode, onClickDarkToggle } =
-    useContext(MenuContext);
+  const { isOpen, setIsOpen } = useContext(MenuContext);
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     if (isOpen) {
@@ -87,7 +85,7 @@ const MenuPopUp = () => {
               </div>
               <div>
                 <div className="h-px w-full bg-primary-a rounded-full mt-20 xl:mt-0" />
-                <div className="py-2 flex justify-between items-center">
+                {/* <div className="py-2 flex justify-between items-center">
                   <h2 className="text-primary-a text-[32px] font-extrabold">
                     Mode
                   </h2>
@@ -97,8 +95,8 @@ const MenuPopUp = () => {
                       toggleDarkMode={onClickDarkToggle}
                     />
                   </div>
-                </div>
-                <div className="h-px w-full bg-primary-a rounded-full " />
+                </div> */}
+                {/* <div className="h-px w-full bg-primary-a rounded-full " /> */}
                 <h1 className="py-2">Twitter</h1>
                 <div className="h-px w-full bg-primary-a rounded-full mb-3" />
                 <a>vishworks.ap@gmail.com</a>

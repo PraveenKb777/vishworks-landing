@@ -2,13 +2,13 @@
 
 import { FormContext } from "@/context/FormContext";
 import { animate, motion, useMotionValue, useTransform } from "motion/react";
-import { FC, useContext, useLayoutEffect, useState } from "react";
+import { FC, useContext, useEffect, useState } from "react";
 import { MdOutlineNavigateNext } from "react-icons/md";
+import Button from "../Button/Button";
 import GardiantText from "../GradiantText/GardiantText";
 import Heading from "../Heading/Heading";
 import { IServiceItems } from "../ServicesCard/ServicesCard";
 import ServicesCard2 from "./ServicesCard2";
-import Button from "../Button/Button";
 const SERVICES_CONTENT: IServiceItems[] = [
   {
     id: "services-90-head-1",
@@ -55,37 +55,33 @@ const AnimatedDot: FC<{ index: number; current: number }> = ({
 function Services() {
   const [sliderVal, setSliderVal] = useState(0);
   const { setIsOpen } = useContext(FormContext);
-  const [isMobile, setIsMobile] = useState(false);
-  useLayoutEffect(() => {
-    function updateSize() {
-      if (window.innerWidth < 768) {
-        console.log("called");
-        setIsMobile(true);
-      } else {
-        setIsMobile(false);
-      }
-    }
-    window.addEventListener("resize", updateSize);
-    updateSize();
-    return () => window.removeEventListener("resize", updateSize);
-  }, []);
 
   const x = useMotionValue(0);
-  console.log(isMobile);
+
+  useEffect(() => {
+    const interval = setInterval(() => onClickNext(), 3000);
+
+    return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  //console.log(isMobile);
 
   const transform = useTransform(
     x,
     [0, SERVICES_CONTENT.length - 1],
     ["0%", `-${(SERVICES_CONTENT.length - 1) * 101}%`]
-    // [isMobile ? "150%" : "60%", isMobile ? "-90%" : "0%"]
   );
   const onClickNext = () => {
-    animate(x, sliderVal + 1 >= SERVICES_CONTENT.length ? 0 : sliderVal + 1, {
-      type: "tween",
-      stiffness: 300,
-      damping: 30,
+    setSliderVal((e) => {
+      animate(x, e + 1 >= SERVICES_CONTENT.length ? 0 : e + 1, {
+        type: "tween",
+        stiffness: 300,
+        damping: 30,
+      });
+
+      return e < SERVICES_CONTENT.length - 1 ? e + 1 : 0;
     });
-    setSliderVal((e) => (e < SERVICES_CONTENT.length - 1 ? e + 1 : 0));
   };
 
   const onClickPrev = () => {

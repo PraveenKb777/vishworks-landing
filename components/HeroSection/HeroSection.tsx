@@ -31,15 +31,13 @@ const HeroSection = () => {
   return (
     <section
       id="hero-section"
-      className="min-h-[100dvh] w-dvw flex flex-col md:flex-row justify-center items-center bg-primary-b transition p-3 xl:p-32"
+      className="min-h-[130dvh] ml-auto mr-auto xl:max-w-[1120px] md:min-h-[100dvh] w-dvw flex flex-col md:flex-row justify-center items-center bg-primary-b transition p-3 "
       ref={sectionRef}
     >
       <div className="flex  justify-center w-full md:max-w-[817px] flex-col">
         {headingInview && (
-          <motion.h1 className="text-[40px] font-bold leading-[40px] lg:text-display-large text-left home-title text-primary-a">
-            <span>Unlock Tech Products</span>
-            <br />
-            <span> Designed for Your</span>
+          <motion.h1 className="text-[40px] mt-20 md:mt-0 font-bold leading-[40px] lg:text-display-large text-left home-title text-primary-a">
+            <span>Innovative Tech for </span>
             <br />
             <span> Business Growth</span>
           </motion.h1>
@@ -53,7 +51,7 @@ const HeroSection = () => {
             visible: { opacity: 1, y: 0 },
           }}
           transition={{ type: "tween", duration: 1 }}
-          className="max-w-[60%] text-left text-[16px] lg:text-paragraph-large text-[#4d4c4d] xl:mt-10"
+          className="max-w-[80%] text-left text-[16px] lg:text-paragraph-large text-[#4d4c4d]"
         >
           We build Software solutions that accelerate your success. From ideas
           to execution, we’re here to create the tools your business needs to
@@ -81,10 +79,10 @@ const HeroSection = () => {
           />
         </motion.div>
       </div>
-      <motion.div className="bg-white relative  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 rounded-lg p-2 w-[80%] mt-20 md:mt-0 md:w-[50%]  aspect-[2/1.5]">
+      <motion.div className="bg-white relative  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 rounded-lg p-2 w-[80%] mt-20 md:mt-0 md:w-[80%]  aspect-[2/1.5]">
         <div className="relative h-full w-full">
           <Image
-            src={"/images/heroSection.png"}
+            src={"/images/heroSection.webp"}
             fill
             alt="heroimage"
             className="drop-shadow-2xl bg-gray-400 bg-opacity-15 rounded-2xl"

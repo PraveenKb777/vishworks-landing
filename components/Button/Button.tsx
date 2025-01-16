@@ -34,7 +34,7 @@ const Button: FC<ButtonProps> = ({ variant, label, load, Logo, ...props }) => {
   if (props.className) {
     className += " ";
     className += props.className;
-    console.log(className, props.className);
+    //console.log(className, props.className);
     delete props.className;
   }
   return (

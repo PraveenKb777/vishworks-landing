@@ -51,6 +51,12 @@ const Concept = () => {
           Grow.
         </motion.h1>
       </div>
+      <p
+        className={"max-w-[1120px] text-paragraph-xsmall italic mx-auto w-max "}
+      >
+        Research to uncover insights, build innovative solutions, and grow
+        sustainably. Empower your journey from ideas to impactful results.
+      </p>
     </section>
   );
 };

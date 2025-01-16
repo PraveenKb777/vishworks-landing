@@ -1,5 +1,5 @@
 "use client";
-import { useScroll } from "motion/react";
+import { useInView, useScroll } from "motion/react";
 import { useLayoutEffect, useRef, useState } from "react";
 import Card from "../Cards";
 
@@ -48,7 +48,7 @@ const Slider = () => {
   useLayoutEffect(() => {
     function updateSize() {
       if (window.innerWidth < 768) {
-        console.log("called");
+        //console.log("called");
         setWIDTH(260);
       } else if (window.innerWidth < 1024) {
         setWIDTH(300);
@@ -65,18 +65,16 @@ const Slider = () => {
     target: targetRef,
     offset: ["start start", "end center"],
   });
+  const inViewRef = useRef(null);
+  const inView = useInView(inViewRef, { once: true });
 
   return (
     <section
       id="howItWorks"
       ref={targetRef}
-      style={{ transformStyle: "preserve-3d" }}
-      className="h-[500vh]  sticky top-0 bottom-0 left-0 right-0 flex justify-center overflow-x-clip   bg-primary-b px-[20px] xl:pl-10 xl:pr-10"
+      className="h-[500vh]  sticky top-0 bottom-0 left-0 right-0 flex justify-center   bg-primary-b px-[20px] xl:pl-10 xl:pr-10"
     >
-      <div
-        style={{ transformStyle: "preserve-3d" }}
-        className="flex flex-col p-0 xl:w-[1120px] justify-center xl:max-w-[1120px] w-screen  sticky top-0 bottom-0 left-0 right-0   h-screen  items-center pt-6  xl:pt-10 "
-      >
+      <div className="flex flex-col p-0 xl:w-[1120px]  justify-center xl:max-w-[1120px] w-screen  sticky top-0 bottom-0 left-0 right-0   h-screen  items-center pt-6  xl:pt-10 ">
         <h1 className=" text-[12px] xl:text-heading-xxsmall  inline-block text-[#4d4c4d] self-start">
           HOW IT WORKS
         </h1>
@@ -85,6 +83,7 @@ const Slider = () => {
         </p>
         <div
           className=" relative  w-full "
+          ref={inViewRef}
           style={{
             height: WIDTH === 420 ? WIDTH : WIDTH === 300 ? WIDTH : WIDTH * 2,
             top: -50,
@@ -97,6 +96,7 @@ const Slider = () => {
               scrollYProgress={scrollYProgress}
               length={SLIDER_CONTENT.length}
               item={e}
+              inView={inView}
             />
           ))}
         </div>
